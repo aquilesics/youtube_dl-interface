@@ -1,0 +1,2 @@
+PySimpleGUI==4.34.0
+youtube-dl==2021.2.22
