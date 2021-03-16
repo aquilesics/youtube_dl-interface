@@ -49,7 +49,7 @@ def ext_info(url:str):
                 _info = f'''Title: {title}
                     Uploader: {uploader}
                     Upload_date: {upload_date}
-                    Duration: { float(int(duration)/60):10.2f}min'''
+                    Duration: { float(int(duration)/60):10.2f}min~'''
                 wrapper = textwrap.TextWrapper(width=50,subsequent_indent='\n')
 
                 return wrapper.fill(text=_info)        
