@@ -37,18 +37,19 @@ def ext_info(url:str):
         except:
             sg.popup('Url invalida!...',location=(720,180))
         
-    info = dict(filter( lambda x:x[0] in ['title','uploader','release_date','upload_date','duration'],info.items()))  
+        else:
+            info = dict(filter( lambda x:x[0] in ['title','uploader','release_date','upload_date','duration'],info.items()))  
     
-    def _formata(title=None,uploader=None,release_date=None,upload_date=None,duration=None ):
-        _info = f'''Title: {title}
+            def _formata(title=None,uploader=None,release_date=None,upload_date=None,duration=None ):
+                _info = f'''Title: {title}
                     Uploader: {uploader}
                     Upload_date: {upload_date}
                     Duration: { float(int(duration)/60):10.2f}min'''
-        wrapper = textwrap.TextWrapper(width=50,subsequent_indent='\n')
+                wrapper = textwrap.TextWrapper(width=50,subsequent_indent='\n')
 
-        return wrapper.fill(text=_info)        
+                return wrapper.fill(text=_info)        
     
-    return _formata(**info)   
+            return _formata(**info)   
 
 options = [
     [
