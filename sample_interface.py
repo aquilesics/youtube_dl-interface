@@ -15,7 +15,12 @@ def my_hook(d):
 
 def _down(url:str, path:str):   
     ydl_opts = {
-                'format': 'bestaudio/best',    
+                'format': 'bestaudio/best',  
+                 'postprocessors': [{
+                                    'key': 'FFmpegExtractAudio',
+                                    'preferredcodec': 'm4a',
+                                    'preferredquality': '192',
+                                    }],  
                 'outtmpl': f'{path}/%(title)s-%(id)s.%(ext)s',
                 'progress_hooks':[my_hook]
     }
